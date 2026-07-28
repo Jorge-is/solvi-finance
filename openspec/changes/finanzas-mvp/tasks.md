@@ -2,12 +2,12 @@
 
 ## Phase 1: Foundation
 
-- [ ] 1.1 Init Supabase project; scaffold `supabase/migrations/0001_init.sql` with tables `profiles`, `accounts`, `categories`, `transactions`, `budgets` (amounts as `BIGINT` centavos, `occurred_at timestamptz`, `client_id text` on `transactions`)
-- [ ] 1.2 Add RLS policies (`user_id = auth.uid()`) to every table in `0001_init.sql`
-- [ ] 1.3 Add unique constraint `(user_id, client_id)` on `transactions` for idempotent sync
-- [ ] 1.4 Write `supabase/migrations/0002_apply_transaction.sql` with `apply_transaction()` and `apply_transfer()` RPCs (`SECURITY DEFINER`, single transaction, mutate `accounts.balance`)
-- [ ] 1.5 Scaffold Expo (TS) app in `mobile/`; add WatermelonDB with local schema mirroring `accounts`/`transactions`/`categories`/`budgets`
-- [ ] 1.6 Configure Supabase Auth client in `mobile/src/lib/supabase.ts`; store session via `expo-secure-store`
+- [x] 1.1 Init Supabase project; scaffold `supabase/migrations/0001_init.sql` with tables `profiles`, `accounts`, `categories`, `transactions`, `budgets` (amounts as `BIGINT` centavos, `occurred_at timestamptz`, `client_id text` on `transactions`)
+- [x] 1.2 Add RLS policies (`user_id = auth.uid()`) to every table in `0001_init.sql`
+- [x] 1.3 Add unique constraint `(user_id, client_id)` on `transactions` for idempotent sync
+- [x] 1.4 Write `supabase/migrations/0002_apply_transaction.sql` with `apply_transaction()` and `apply_transfer()` RPCs (`SECURITY DEFINER`, single transaction, mutate `accounts.balance`)
+- [x] 1.5 Scaffold Expo (TS) app in `mobile/`; add WatermelonDB with local schema mirroring `accounts`/`transactions`/`categories`/`budgets`
+- [x] 1.6 Configure Supabase Auth client in `mobile/src/lib/supabase.ts`; store session via `expo-secure-store`
 
 ## Phase 2: Core Implementation
 

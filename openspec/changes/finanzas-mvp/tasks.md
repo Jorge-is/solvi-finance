@@ -11,17 +11,17 @@
 
 ## Phase 2: Core Implementation
 
-- [ ] 2.1 Implement login/magic-link screens (`mobile/src/screens/Auth/`) calling Supabase Auth
-- [ ] 2.2 Implement biometric unlock (`expo-local-authentication`) gating app entry when a stored session exists
-- [ ] 2.3 Implement account CRUD screens and WatermelonDB model (`mobile/src/models/Account.ts`)
-- [ ] 2.4 Implement quick-entry transaction form (amount, type, account, category, payment method, note) writing to local WatermelonDB, ≤3 taps to submit
-- [ ] 2.5 Implement transfer flow calling `apply_transfer()` semantics (local queued as linked debit/credit)
-- [ ] 2.6 Implement `supabase/functions/sync/` Edge Function following WatermelonDB sync protocol, calling `apply_transaction`/`apply_transfer` per queued row
-- [ ] 2.7 Wire WatermelonDB sync adapter (`mobile/src/sync/`) to call the sync endpoint on reconnect; surface pending/failed state in UI
-- [ ] 2.8 Implement budget CRUD screens and category-scoped monthly limit storage
-- [ ] 2.9 Implement `supabase/functions/evaluate-budgets/` scheduled function computing spent-vs-limit per user/category/month and sending Expo push at 80% and 100% thresholds (once each per budget/month)
-- [ ] 2.10 Implement monthly cash-flow and category-breakdown report queries (local-timezone month boundaries, transfers excluded)
-- [ ] 2.11 Implement CSV export (movements → CSV with soles-formatted amounts) and CSV import (validate rows, atomic insert, per-row error reporting)
+- [x] 2.1 Implement login/magic-link screens (`mobile/src/screens/Auth/`) calling Supabase Auth
+- [x] 2.2 Implement biometric unlock (`expo-local-authentication`) gating app entry when a stored session exists
+- [x] 2.3 Implement account CRUD screens and WatermelonDB model (`mobile/src/models/Account.ts`)
+- [x] 2.4 Implement quick-entry transaction form (amount, type, account, category, payment method, note) writing to local WatermelonDB, ≤3 taps to submit
+- [x] 2.5 Implement transfer flow calling `apply_transfer()` semantics (local queued as linked debit/credit)
+- [x] 2.6 Implement `supabase/functions/sync/` Edge Function following WatermelonDB sync protocol, calling `apply_transaction`/`apply_transfer` per queued row
+- [x] 2.7 Wire WatermelonDB sync adapter (`mobile/src/sync/`) to call the sync endpoint on reconnect; surface pending/failed state in UI
+- [x] 2.8 Implement budget CRUD screens and category-scoped monthly limit storage
+- [x] 2.9 Implement `supabase/functions/evaluate-budgets/` scheduled function computing spent-vs-limit per user/category/month and sending Expo push at 80% and 100% thresholds (once each per budget/month)
+- [x] 2.10 Implement monthly cash-flow and category-breakdown report queries (local-timezone month boundaries, transfers excluded)
+- [x] 2.11 Implement CSV export (movements → CSV with soles-formatted amounts) and CSV import (validate rows, atomic insert, per-row error reporting)
 
 ## Phase 3: Integration / Wiring
 

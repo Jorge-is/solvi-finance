@@ -1,0 +1,63 @@
+# openspec/config.yaml
+schema: spec-driven
+
+context: |
+  Tech stack: React Native (Expo) + TypeScript, Supabase (Postgres, Auth, Storage), WatermelonDB (offline sync)
+  Architecture: SaaS multi-tenant via Postgres RLS, offline-first mobile client, materialized account balances via Postgres RPC
+  Testing: not yet scaffolded — greenfield project
+  Style: to be defined when project is scaffolded (ESLint + Prettier expected for RN/TS)
+
+strict_tdd: false  # no test runner detected — project not yet scaffolded
+
+rules:
+  proposal:
+    - Include rollback plan for risky changes
+    - Identify affected modules/packages
+  specs:
+    - Use Given/When/Then format for scenarios
+    - Use RFC 2119 keywords (MUST, SHALL, SHOULD, MAY)
+    - All monetary scenarios MUST specify amounts in centavos (PEN cents), never floats
+  design:
+    - Include sequence diagrams for complex flows (offline sync, balance RPC, budget evaluation)
+    - Document architecture decisions with rationale
+  tasks:
+    - Group tasks by phase (infrastructure, implementation, testing)
+    - Use hierarchical numbering (1.1, 1.2, etc.)
+    - Keep tasks small enough to complete in one session
+  apply:
+    - Follow existing code patterns and conventions
+    - Load relevant coding skills for the project stack
+    tdd: false
+    test_command: ""
+  verify:
+    - Run tests if test infrastructure exists
+    - Compare implementation against every spec scenario
+    test_command: ""
+    build_command: ""
+    coverage_threshold: 0
+  archive:
+    - Warn before merging destructive deltas (large removals)
+
+testing:
+  strict_tdd: false
+  detected: "2026-07-27"
+  test_runner:
+    command: ""
+    framework: "not detected — greenfield project"
+  layers:
+    unit: false
+    integration: false
+    e2e: false
+  coverage:
+    available: false
+    command: ""
+  quality_tools:
+    linter:
+      available: false
+      command: ""
+    type_checker:
+      available: false
+      command: ""
+    formatter:
+      available: false
+      command: ""
